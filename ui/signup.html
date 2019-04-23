@@ -1,0 +1,22 @@
+[[define "signup"]]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title></title>
+[[template "head"]]
+</head>
+<body>
+<div class="w3-display-middle" style="height:300px;">
+	<h3>Sign up</h3>
+  <form method="post" action="">
+    	<p><input type="text" placeholder="Username" name="name" autofocus required>
+    	<p><input type="email" placeholder="Email" name="email" autofocus required>
+    	<p><input type="password" placeholder="Password" name="password" id="password">
+	  <p><input type="password" placeholder="Confirm password" id="confirm_password">
+	  <p><button type="submit">Next <i class="fa fa-sign-in"></i></button>&emsp;<a href="/">Back  <i class="fa fa-undo"></i></a>
+  </form>
+</div>
+[[template "disable_back_button"]]
+</body>
+</html>
+[[end]]

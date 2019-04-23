@@ -1,0 +1,14 @@
+{
+    "database": {
+        "ip": "example.com",
+        "port": 3306,
+        "user": "root",
+        "password": "password",
+        "name": "skel"
+    },
+    "smtp": "smtp.gmail.com",
+    "port": 587,
+    "user": "mailer@gmail.com",
+    "password": "password",
+    "name": "mailer name"
+}

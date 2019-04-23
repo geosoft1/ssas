@@ -1,0 +1,30 @@
+[[define "user"]]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title></title>
+[[template "head"]]
+</head>
+<body>
+[[template "navbar" .]]
+<div class="w3-display-container">
+  <div class="w3-container">
+    <h3>Edit user</h3>
+    <form method="post" action="">
+      <p><input type="text" placeholder="Name" name="name" value="[[.Name]]" title="Name" autofocus>
+      <p><input type="password" placeholder="Password" name="password" id="password" value="[[.Password]]" title="Password">
+      <p><input type="password" placeholder="Confirm password" name="password" id="confirm_password" value="[[.Password]]" title="Confirm password">
+      <p><button type="submit" name="submit" value="save">Save</button>
+    </form>
+    <hr>
+    <h3>Danger zone!</h3>
+    <form method="post" action="" onsubmit="return confirm('Sure?');">
+      <p><input class="w3-check" type="checkbox" required> <b>I understand this will delete my account</b>
+      <p><button type="submit" name="submit" value="delete">Delete my account</button>
+    </form>
+  </div>
+</div>
+[[template "disable_back_button"]]
+</body>
+</html>
+[[end]]

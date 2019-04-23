@@ -1,0 +1,29 @@
+[[define "new"]]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title></title>
+[[template "head"]]
+</head>
+<body>
+[[template "navbar" .]]
+<div class="w3-display-container">
+    <div class="w3-container">
+    <h3>Add sensor</h3>
+    <form method="post" action="">
+    <p><input type="text" placeholder="Name" name="name" autofocus required>
+    <p><input type="text" placeholder="Description" name="description" required>
+    <p><!--select name="unit" required>
+    		<option value="" disabled selected>Unit</option>
+    		<option value="C">C</option>
+    	</select-->
+    <p><input type="text" placeholder="Measurement unit" name="unit" value="" required>
+    <p><input type="text" placeholder="Token" name="token" value="[[.Token]]" readonly="readonly">
+    <p><input class="w3-check" type="checkbox" name="active" checked> <b>Active</b>
+    <p><button type="submit">Save</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>
+[[end]]
