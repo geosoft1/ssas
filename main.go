@@ -76,7 +76,7 @@ var (
 )
 
 func main() {
-	// NOTE this will avoid processor overload
+	// NOTE this will avoid processor overload in some circumstances
 	runtime.GOMAXPROCS(1)
 
 	flag.Usage = func() {

@@ -135,3 +135,5 @@ Look carefully over **TODO** and **NOTE** comments because you may need to adjus
 ### Known issues
 
 The skeleton is designed to work with HTML5 so make sure your browser support this.
+
+For now the passwords are stored in plain text in the database. Add your own security or wait until will be available soon in the next version.
