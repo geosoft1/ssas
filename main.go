@@ -19,7 +19,7 @@ import (
 
 // TODO application version
 // https://semver.org/#semantic-versioning-200
-const SW_VERSION = "1.0.0"
+const SW_VERSION = "1.0.0-release-build260419"
 
 // NOTE session cookie name
 const SESSID = "SESSID"
