@@ -39,10 +39,11 @@ func reset(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		// TODO reset password to random, uncomment the following 4 lines
-		//password := user.Password
-		//user.Password = token.GetToken(8)
-		//if err := sqlUpdateUser(&user, user.Email, password); err != nil {
-		//}
+		// user.Password = token.GetToken(8)
+		// if err := sqlUpdateUser(&user); err != nil {
+		// 	http.Error(w, http.StatusText(http.StatusNotAcceptable), http.StatusNotAcceptable)
+		// 	return
+		// }
 		// https://stackoverflow.com/a/24431749
 		mail := gomail.NewMessage()
 		mail.SetAddressHeader("From", config.SMTP.User, config.SMTP.Name)
