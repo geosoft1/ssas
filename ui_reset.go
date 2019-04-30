@@ -20,8 +20,6 @@ func reset(w http.ResponseWriter, r *http.Request) {
 			http.Error(w, http.StatusText(http.StatusNotAcceptable), http.StatusNotAcceptable)
 			return
 		}
-		log.Println(user.Password)
-		return
 		// https://stackoverflow.com/a/24431749
 		mail := gomail.NewMessage()
 		mail.SetAddressHeader("From", config.SMTP.User, config.SMTP.Name)
