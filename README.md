@@ -24,19 +24,19 @@ The skeleton is based on [W3CSS](https://www.w3schools.com/w3css/), a very light
 
 	go build -tags="plain"
 
-Passwords are stored in plain text in the database and sent as plain text on mail to recovery (unrecomanded).
+Passwords are stored in plain text in the database and sent as plain text on mail to recovery (unrecommended).
 
 #### Hashed passwords
 
 	go build -tags="sha1 random"
 
-Passwords are stored hashed in the database and sent as random on mail to recovery (recomanded).
+Passwords are stored hashed in the database and sent as random on mail to recovery (recommended).
 
 #### Salted and hashed passwords
 
 	go build -tags="saltsha1 random"
 
-Passwords are stored salted and hashed in the database and sent as random on mail to recovery (highly recomanded).
+Passwords are stored salted and hashed in the database and sent as random on mail to recovery (highly recommended).
 
 The tag `random` mean send password as random string.
 
