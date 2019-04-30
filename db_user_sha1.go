@@ -1,4 +1,4 @@
-// +build plain
+// +build sha1
 
 package main
 
@@ -22,7 +22,7 @@ func sqlUserCount() (error, int) {
 
 // Get a user identifyed by email and password.
 func sqlAuthenticateUser(u *User) error {
-	if err := db.QueryRow("SELECT * FROM user WHERE email=? AND password=?", u.Email, u.Password).Scan(&u.Id, &u.Name, &u.Email, &u.Password, &u.isActive); err != nil {
+	if err := db.QueryRow("SELECT * FROM user WHERE email=? AND password=SHA1(?)", u.Email, u.Password).Scan(&u.Id, &u.Name, &u.Email, &u.Password, &u.isActive); err != nil {
 		log.Println(err)
 		return err
 	}
@@ -40,7 +40,7 @@ func sqlGetUser(u *User) error {
 
 // Create new user identifyed by name, email and password.
 func sqlInsert(u *User) error {
-	if _, err := db.Exec("INSERT user SET name=?, email=?, password=?", &u.Name, &u.Email, &u.Password); err != nil {
+	if _, err := db.Exec("INSERT user SET name=?, email=?, password=SHA1(?)", &u.Name, &u.Email, &u.Password); err != nil {
 		log.Println(err)
 		return err
 	}
@@ -49,7 +49,7 @@ func sqlInsert(u *User) error {
 
 // Update a user identifyed by email and password.
 func sqlUpdateUser(u *User) error {
-	if _, err := db.Exec("UPDATE user SET name=?, password=? WHERE email=?", u.Name, u.Password, u.Email); err != nil {
+	if _, err := db.Exec("UPDATE user SET name=?, password=SHA1(?) WHERE email=?", u.Name, u.Password, u.Email); err != nil {
 		log.Println(err)
 		return err
 	}

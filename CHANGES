@@ -1,0 +1,6 @@
+1.0.0-release-build230419
+first release
+
+1.1.0-release-build300419
+- salted and hashed passwords in database
+- send random recovery passwords on mail

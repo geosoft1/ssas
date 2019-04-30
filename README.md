@@ -12,10 +12,33 @@ Basic server side web application with the following functionality:
 - config file in JSON format
 - database generated from file or model (with [Mysql Workbench](https://dev.mysql.com/downloads/workbench/))
 - responsive interface for mobile access, browser back button disabled
+- salted and hashed passwords in database
 
 ### Integrations
 
 The skeleton is based on [W3CSS](https://www.w3schools.com/w3css/), a very lightweight CSS framework and is designed to integrate with [JQuery](https://jquery.com/), [Angular](https://angular.io/), [Fontawesome](https://fontawesome.com/v4.7.0/icons/) and some useful libraries like [Datetime picker](https://trentrichardson.com/examples/timepicker/) and [Google Charts](https://developers.google.com/chart/) (see `ui/head.html` file).
+
+### Compilation modes
+
+#### Plaint text passwords
+
+	go build -tags="plain"
+
+Passwords are stored in plain text in the database and sent as plain text on mail to recovery (unrecomanded).
+
+#### Hashed passwords
+
+	go build -tags="sha1 random"
+
+Passwords are stored hashed in the database and sent as random on mail to recovery (recomanded).
+
+#### Salted and hashed passwords
+
+	go build -tags="saltsha1 random"
+
+Passwords are stored salted and hashed in the database and sent as random on mail to recovery (highly recomanded).
+
+The tag `random` mean send password as random string.
 
 ### How is look like?
 
@@ -135,5 +158,3 @@ Look carefully over **TODO** and **NOTE** comments because you may need to adjus
 ### Known issues
 
 The skeleton is designed to work with HTML5 so make sure your browser support this.
-
-For now the passwords are stored in plain text in the database. Add your own security or wait until will be available soon in the next version.

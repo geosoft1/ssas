@@ -19,7 +19,7 @@ import (
 
 // TODO application version
 // https://semver.org/#semantic-versioning-200
-const SW_VERSION = "1.0.0-release-build260419"
+const SW_VERSION = "1.1.0-release-build300419"
 
 // NOTE session cookie name
 const SESSID = "SESSID"
@@ -66,12 +66,17 @@ var httpsEnabled = flag.Bool("https-enabled", false, "enable https server")
 
 var config = &Config{}
 var templ = template.New("templ").Delims("[[", "]]") // integrate with angular
-// core routers
-var router = mux.NewRouter() // main router
+var router = mux.NewRouter()                         // main router
+
+// NOTE this is the salt for secured passwords
+const salt = "super-secret-key"
+
+// NOTE random recovery password length
+const token_len = 8
 
 var (
 	// key must be 16, 24 or 32 bytes long (AES-128, AES-192 or AES-256)
-	key   = []byte("super-secret-key")
+	key   = []byte(salt)
 	store = sessions.NewCookieStore(key)
 )
 
