@@ -4,3 +4,6 @@ first release
 1.1.0-release-build300419
 - salted and hashed passwords in database
 - send random recovery passwords on mail
+
+1.1.1-release-build030519
+- reset the password to random only if the mail was successfully sent
