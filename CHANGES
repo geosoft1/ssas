@@ -7,3 +7,6 @@ first release
 
 1.1.1-release-build030519
 - reset the password to random only if the mail was successfully sent
+
+1.1.2-release-build160619
+- sticky navbar in ui

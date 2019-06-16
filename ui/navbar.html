@@ -1,9 +1,11 @@
 [[define "navbar"]]
+<div class="w3-top" style="position:sticky">
 <div class="w3-bar w3-light-gray">
   <a href="/a/home" class="w3-bar-item" title="Home page"><i class="fa fa-th"></i></a>
   <!-- add your pages here -->
   <!-- -->
   <a href="/signout" class="w3-bar-item w3-right" onclick="return confirm('Sure?');" title="Click here to sign out!">Sign out <i class="fa fa-sign-out fa-lg"></i></a>
   <a href="/a/user" class="w3-bar-item w3-right" title="Edit the current user">[[.Name]] <i class="fa fa-user fa-lg"></i></a>
+</div>
 </div>
 [[end]]
