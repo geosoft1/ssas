@@ -155,6 +155,24 @@ Take care to the template parameters. Add them as you need. `Name` parameter mus
 
 Look carefully over **TODO** and **NOTE** comments because you may need to adjust as you need.
 
+### Make your application look better with Bootstrap
+
+For keeping things simple, the skeleton comes with a very basic set of widgets based on W3CSS. You can use [Bootstrap](https://getbootstrap.com/) following the next steps:
+
+- remove inputs `height` from `style.html` because is useful just for W3CSS framework
+
+		select,input,button {
+		  -height:30px; /* all inputs must have the same height */
+
+- use fixed length in forms containers, eg:
+
+		<div class="w3-container" style="width:400px">
+
+- add bootstrap classes on inputs (or other elements), eg:
+
+		<input class="form-control" type="text">
+		<button class="btn btn-primary" type="submit">
+
 ### Known issues
 
 The skeleton is designed to work with HTML5 so make sure your browser support this.
