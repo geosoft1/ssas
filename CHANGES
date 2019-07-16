@@ -13,3 +13,8 @@ first release
 
 1.2.0-release-build290619
 - add bootstrap support
+
+1.2.1-release-build160719
+- add vendor folder
+- navbar add w3-margin-bottom
+- head add shortcut icon
